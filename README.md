@@ -87,11 +87,13 @@ Exemple avec "signup" API (ajout d'un utilisateur)
         X-Requested-With: XMLHttpRequest
     JSON :
         {
-    	"name": "Manu",
-    	"email": "e.kergreis@test.fr",
-    	"password": "12345",
-    	"password_confirmation": "12345"
-        }
+			"username": "julie.kulas@example.net",
+			"password": "123",
+			"grant_type": "password",
+			"client_id": 3,
+			"client_secret": "zAlm3kOnR4NAO4RrnbEAyZ9bCyAg3D3kXyY16cMTn",
+			"scope": "*"
+		}
 
 Pour créer les premiers utilisateurs dans la base mySQL :
 
