@@ -15,13 +15,11 @@ class MenuTest extends TestCase
      *
      * @return void
      */
-    public function testMenuBadAuth()
-    {
+    public function testMenuBadAuth() {
         $reponse = $this->json('get', 'api/menu');
         $reponse->assertStatus(401);
     }
-    public function testCanMenuAdmin()
-    {
+    public function testCanMenuAdmin() {
         $user = factory(User::class)->create(['password' => bcrypt('test'), 'role' => 'admin']);
 
         $reponse = $this->actingAs($user, 'api')->json('get', 'api/menu');
@@ -31,8 +29,7 @@ class MenuTest extends TestCase
         $this->assertStringContainsStringIgnoringCase('page 2',$reponse->getContent());
         $this->assertStringNotContainsStringIgnoringCase('page 1',$reponse->getContent());
     }
-    public function testCanMenuStandard()
-    {
+    public function testCanMenuStandard() {
         $user = factory(User::class)->create(['password' => bcrypt('test'), 'role' => 'standard']);
 
         $reponse = $this->actingAs($user, 'api')->json('get', 'api/menu');
