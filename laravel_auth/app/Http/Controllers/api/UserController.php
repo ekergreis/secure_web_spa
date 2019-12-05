@@ -45,9 +45,6 @@ class UserController extends Controller
      * @param  [string] email
      * @param  [string] password
      * @param  [boolean] remember_me
-     * @return [string] access_token
-     * @return [string] token_type
-     * @return [string] expires_at
      */
 
     /*

@@ -49,7 +49,7 @@ class LoginController extends ATC
             return response(["message" => "Internal server error"], 500);
         }
         catch (OAuthServerException $e) {
-            return response(["message" => "Codes acces incorrects.', 6, 'invalid_credentials"], 500);
+            return response(["message" => "Codes acces incorrects.', 6, 'invalid_credentials"], 401);
         }
         catch (Exception $e) {
             return response(["message" => "Internal server error"], 500);
